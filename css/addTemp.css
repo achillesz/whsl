@@ -1,0 +1,22 @@
+.listAsk{ color:#4b4b4b; line-height:25px; }
+.listAsk li{ padding-left:15px; padding-right:10px;}
+.ask{ padding-top:7px; padding-bottom:7px;}
+.asw{ background-color:#f7f7f7; padding-top:8px; padding-bottom:8px;}
+.page{ text-align:center; background:url("../images/dashLine.png") left bottom repeat-x; padding-bottom:20px;}
+.page a{ display:inline-block; width:94px; height:32px; line-height:32px;}
+.page a:link,.page a:visited{ border:1px solid #ebebeb; color:#5b5b5b;}
+.page a:hover{ border:1px solid #f9ceb0; background-color:#fdfbef; color:#ff6b00; text-decoration:none;}
+.tiwen{ font-family:"microsoft yahei"; font-size:16px; color:#f9964e; line-height:24px; padding-left:25px; margin-top:15px;}
+.tiwenIco{ width:14px; height:14px; background-position:left -310px; position:absolute; left:0; top:6px;}
+.ml10{ margin-left:10px;}
+.mr10{ margin-right:10px;}
+.ml20{ margin-left:20px;}
+.listAsk span { color:#8e8e8e;}
+.ask a:link,.ask a:visited{ color:#000; text-decoration:none;}
+.ask a:hover{ color:#900; text-decoration:none;}
+.asw a:link,.asw a:visited{ color:#4b4b4b; text-decoration:none;}
+.asw a:hover{ text-decoration:none; color:#900;}
+.asw span a:link,.asw span a:visited{ color:#485a90; text-decoration:underline;}
+.asw span a:hover{ color:#900;}
+.scroll-long{ margin-top:5px; height:485px; overflow:hidden; }
+

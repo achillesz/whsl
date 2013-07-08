@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="gb2312">
+    <title>外汇沙龙</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+    <base target="_blank"/>
+</head>
+<body>
+<script type="text/javascript">
+    // 编辑自定义用户ID(右侧专家好评版)
+    var uids = ['1233221111222','55555555555','18713339682','1871339682','21744271','21720413','21707885','21703404','21123500','21096366'];
+    // 当前在线人数
+    var nowLineNum = 1000;
+    // 编辑专家标签
+    var ZJtag = ['13','12101','2','79302']
+</script>
+<script charset="gb2312" type="text/javascript" language="javascript">
+    var href=window.location.href;
+    hexunMember_loginSetup_signOutURL=href;//登出地址
+    hexunMember_loginSetup_noLoginDisplayMsg=""; //没登陆的提示
+    hexunMember_loginSetup_noLoginDisplayFlag="|";//登录和注册中间的分隔符号 或 用户名与登出中间的分隔符号，不需要分隔符可以为空
+    hexunMember_loginSetup_islogined_isDisplay=true;//如果是登陆状态，true=显示用户名和登出按钮等信息,flase=不显示任何信息
+    hexunMember_loginSetup_referrer=document.referrer;//请不要修改此项
+    hexunMember_loginSetup_MastLogin=0;//如果需要不登陆就一直弹窗，在此设置一下弹窗时间间隔(秒)。如果等于0本项无效
+</script>
+<!--登录注册over-->
+
+<div class="headerA">
+<div id="zt_head2010">
+    <link rel="stylesheet" type="text/css" href="http://img.hexun.com/2010/zt/zthead2010.css" />
+    <script src="http://img.hexun.com/js/hexunjs.js"></script>
+    <form action="http://search.hexun.com/search_result.jsp" method="post" name="hexunsearch"  target="_blank" id="hexunsearch" style="margin:0">
+        <input type="hidden" name="searchID" value="128" />
+        <input type="hidden" name="wf" value="2" />
+        <input type="hidden" name="stockid" id="stockid" value="" />
+        <input type="hidden" name="Dboard" value="-1" />
+        <input type="hidden" name="Dtime" value="3m" />
+        <input type="hidden" name="Dkeytype" value="1" />
+        <input type="hidden" name="Ttext" value="" />
+        <input type="hidden" name="sw" value="" />
+        <input type="hidden" name="msn_stockid" value="" />
+        <input type="hidden" name="fund_code" value="" />
+        <div class="ztlogo"><a href="http://www.hexun.com" target="_blank"><img src="http://img.hexun.com/2010/logo/zt_logo.gif" alt="和讯" border="0" /></a><a href="http://www.hexun.com" target="_blank" id="subChannelLogo"><img src="http://img.hexun.com/images2008/emp.gif" alt="" border="0" /></a></div>
+        <div class="ztlink"><a href="http://www.hexun.com/">和讯首页</a> | <a href="http://money.hexun.com/" id=hexunChannel>理财首页</a></div>
+        <div class="ztsea">
+            <input type="radio" name="whichDB" value="stock" id="rdstock" onclick="wrDefault(this)" checked />&nbsp;股票/基金&nbsp;
+            <input type="radio" name="whichDB" value="guba" id="rdguba" onclick="wrDefault(this)" />&nbsp;微博&nbsp;
+            <input type="radio" name="whichDB" value="info" id="rdinfo" onclick="wrDefault(this)" />&nbsp;新闻&nbsp;
+            <input type="radio" name="whichDB" value="blog" id="rdblog" onclick="wrDefault(this)" />&nbsp;个人门户&nbsp;
+            <input id="textMessage" value="代码/名称/拼音"  type="text" name="tempsw" onfocus="clearDefault(this)" onkeydown="if(event.keyCode==13){submitForm_x();return false;}"/>
+            <a onclick="submitForm_x()"><img src="http://img.hexun.com/2010/zt/nztbut.gif" border="0" align="absmiddle" / alt="search2"></a>
+        </div>
+    </form>
+</div>
+<!--股票输入提示-->
+<div id="standStockPanel"></div>
+<script language="javascript" src="http://img.hexun.com/js/standSearchVerify.js"></script>
+<script language="javascript" type="text/javascript">
+    new hxSuggest('textMessage','http://data.stock.hexun.com/include/AjaxSearch2011.ashx',{contrainer:document.getElementById('standStockPanel')});
+</script>
+<!--股票输入提示over-->
+
+</div>
+<div class="scroll-news clearfix">
+    <div class="scroll-tit fl mt10">滚动新闻</div>
+    <div class="scroll-r fl pt10">
+        <div class="scrollOut" id="scrollText">
+            <div class="scrollInner">
+            <ul class="fl">
+                <li><a href="#">A：北斗导航概念重挫超3% 4股跌超6%</a></li>
+                <li><a href="#">快讯：北斗导航概念重挫超3% 4股跌超6%</a></li>
+                <li><a href="#">快讯：北斗导航概念重挫超3% 4股跌超6%</a></li>
+                <li><a href="#">HI：北斗导航概念重</a></li>
+            </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="timeSection pt10">
+    <div class="timeWrap clearfix" id="timeBox">
+    <div class="fl timep1">
+        <h2 class="timeTit">09：30 - 11：30</h2>
+        <div class="timeCon clearfix">
+            <div class="fl timeConL">
+                <a href="#"><img src="images/temp1.png" alt=""/></a>
+                <p><a href="#">山姆</a></p>
+            </div>
+            <blockquote class="fl ml10 timeConR">
+               金汇通中文外汇网首席分析师，金汇通中文外汇网首席分析师，“浙外论坛”总版主，有多年外汇专业操作经验和操盘经验。 <a href="#">更多&gt;&gt;</a>
+            </blockquote>
+        </div>
+    </div>
+    <div class="fl timep1 timep2">
+        <h2 class="timeTit">14：00 - 16：00</h2>
+        <div class="timeCon clearfix">
+            <div class="fl timeConL">
+                <a href="#"><img src="images/temp1.png" alt=""/></a>
+                <p><a href="#">山姆</a></p>
+            </div>
+            <blockquote class="fl ml10 timeConR">
+                金汇通中文外汇网首席分析师，金汇通中文外汇网首席分析师，“浙外论坛”总版主，有多年外汇专业操作经验和操盘经验。 <a href="#">更多&gt;&gt;</a>
+            </blockquote>
+        </div></div>
+    <div class="fl timep1">
+        <h2 class="timeTit">20：00 - 22：00</h2>
+        <div class="timeCon clearfix">
+            <div class="fl timeConL">
+                <a href="#"><img src="images/temp1.png" alt=""/></a>
+                <p><a href="#">山姆</a></p>
+            </div>
+            <blockquote class="fl ml10 timeConR">
+                金汇通中文外汇网首席分析师，金汇通中文外汇网首席分析师，“浙外论坛”总版主，有多年外汇专业操作经验和操盘经验。 <a href="#">更多&gt;&gt;</a>
+            </blockquote>
+        </div>
+    </div>
+    </div>
+</div>
+<div class="row1 clearfix mt20">
+        <div class="row1aA fl ml20">
+            <div class="row1Mod1"><span class="row1Ico"></span>当前在线<span class="colA"><span id="nowLine"></span></span>人</div>
+            <div class="row1Mod1 ml10"><span class="row1Ico"></span>累计提问<span class="colA" id="sumVisters">835</span>次</div>
+        </div>
+        <div class="row1aB fl ml20">
+            <div class="row1Mod1 fl f14 mt20"><span class="row1Ico"></span>选择刷新方式：</div>
+            <div class="select fl mt10 pr" id="select">
+                <div class="fl selectText"><p>1分钟刷一次</p><a href="#" class="selectIco"></a></div>
+                <div class="fl selectCon">
+                    <ul>
+                        <li value="60000">1分钟刷一次</li>
+                        <li value="120000">2分钟刷一次</li>
+                        <li value="300000">5分钟刷一次</li>
+                    </ul>
+                </div>
+            </div>
+            <a href="#" class="shuaxin" id="shuaxin">立即刷新</a>
+        </div>
+        <div class="row1aC fr pr20 pt10">
+            <div class="search">
+                <input type="text" id="search" value="请输入搜索内容" class="searchInput"/><input type="submit" value="" class="searchSub"/>
+            </div>
+        </div>
+</div>
+<div class="context clearfix pt20">
+    <div class="panel fl">
+        <div class="panelOne ml20 mr20 clearfix">
+            <ul class="tagList fl" id="askNavBox">
+                <li class="tagOn">已回答<span></span></li>
+                <li>未回答<span></span></li>
+                <li>全部问答</li>
+            </ul>
+            <div class="fl drop" id="drop">
+                <div class="dropText">
+                    <p>今日分析师问答</p>
+                    <span class="dropIco"></span>
+                </div>
+                <div class="dropCon">
+                    <ul>
+                        <li>今日分析师问答</li>
+                        <li>分析师1</li>
+                        <li>分析师2</li>
+                        <li>分析师3</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!--内容模板1 s-->
+        <script id="wdT" type="text/x-dot-template">
+        {{ for(var i = 0,len = it.result.length; i < len; i++){}}
+            <li class="ask" id="{{=it.result[i].Id}}"><span>{{=it.result[i].PostTime.split(' ')[1].substring(0,5)}}</span><span class="ml10 mr10" PostUserID="{{=it.result[i].PostUserID}}">
+                 {{if(it.result[i].QuestionIsAnonymous != 'False'){}}
+                    匿名网友
+              {{ }
+               else{}}
+                <a href="{{=it.result[i].QuestionPostUserUrl}}">{{=it.result[i].PostUserName}}</a>
+               {{ }}}
+                </span><a href="{{=it.result[i].Url}}">{{=it.result[i].Title}}</a></li>
+            {{if(it.result[i].BestAnswer){}}
+
+
+            <li class="asw" AnswerId="{{=it.result[i].BestAnswer.AnswerId}}"><span>{{=it.result[i].BestAnswer.AnswerPostTime.split(' ')[1].substring(0,5)}}</span><span class="ml10 mr10"><a href="{{=it.result[i].BestAnswer.AnswerPostUserUrl}}" AnswerPostUserId="{{=it.result[i].BestAnswer.AnswerPostUserId}}">{{=it.result[i].BestAnswer.AnswerPostUserName}}: </a></span><a href="{{=it.result[i].BestAnswer.AnswerUrl}}">{{=it.result[i].BestAnswer.AnswerContent}}</a></li>
+            {{   }
+          }}}
+        </script>
+     <script id="askT" type="text/x-dot-template">
+         {{ for(var i = 0,len = it.result.length; i < len; i++){}}
+         <li class="ask" id="{{=it.result[i].Id}}"><span>{{=it.result[i].PostTime.split(' ')[1].substring(0,5)}}</span><span class="ml10 mr10" PostUserID="{{=it.result[i].PostUserID}}">
+                 {{if(it.result[i].QuestionIsAnonymous != 'False'){}}
+                    匿名网友
+              {{ }
+               else{}}
+                <a href="{{=it.result[i].QuestionPostUserUrl}}">{{=it.result[i].PostUserName}}</a>
+               {{ }}}
+                </span><a href="{{=it.result[i].Url}}">{{=it.result[i].Title}}</a></li>
+         {{  }}}
+        </script>
+        <!--内容模板1 e-->
+        <div class="panelCon">
+           <ul class="listAsk" id="questionAndAnswer">
+           </ul>
+            <div class="page pt20" id="page">
+                <a href="#" class="pre mr10">上一页</a><a href="#" class="next">下一页</a>
+            </div>
+            <div class="loginTit clearfix">
+                <div class="fl pr tiwen"><span class="tiwenIco"></span>我要提问</div>
+                <div class="logT fr pt15 mr3 pr">
+                    <span class="huanY"></span>
+                    <span class="userName" id="userName"></span>
+                    <img src="images/loginTit.png" alt=""/>
+                </div>
+
+
+            </div>
+            <form action="aaa.php" id="formCon" method="post">
+            <div class="textArea mt15">
+                <textarea name="" id="textArea">   请登录后输入问题</textarea>
+            </div>
+            <div class="clearfix pb25 mr5">
+                <div class="fafu fr pt10">
+                    <div class="fl" style="display:none;" id="niming"><input type="checkbox" class="fl inputSet"/>
+                    <span class="fl inputTextSet">匿名提问</span>
+                    </div>
+                    <a href="#" class="fabuBtn fl" id="subForm"></a>
+                </div>
+            </div>
+            </form>
+        </div>
+
+    </div>
+    <div class="contextR fr">
+        <div class="contextRA">
+        <h2  class="tit2">专家好评榜</h2>
+            <script id="phb1T" type="text/x-dot-template">
+                <ul class="hpList1 clearfix">
+                    {{ for(var i = 0,len = 3; i < len; i++){}}
+                    <li><a href="{{=it.result[i].Url}}">
+                        <div class="fl hpList1L">
+                            <img src="{{=it.result[i].Logo}}" alt=""/>
+                        </div>
+                        <div class="fl hpList1R">
+                            <h2 class="hpList1Tit">{{=it.result[i].Name}}</h2>
+                            <div class="hpInfo">{{=it.result[i].KeyWord}}</div>
+                            <div class="hpZ">
+                                <span class="col_Orange">{{=it.result[i].VoteCount}}</span>个赞同<span class="col_Orange ml10">{{=it.result[i].AnswerCount}}</span>个回答
+                            </div>
+                            <div class="hpF clearfix">
+                                <span class="focus mr10">关注</span><span class="mess">私信</span>
+                            </div>
+                        </div>
+                    </a>
+                    </li>
+                    {{  }}}
+                </ul>
+            </script>
+            <script id="phb2T" type="text/x-dot-template">
+                <ul class="hpList2">
+                    {{ for(var i = 3,len = (it.result.length > 10 ? 10 : it.result.length); i < len; i++){
+                    if(i != 9){}}
+                    <li>
+                  {{  }
+                    else{ }}
+                        <li class="lastList2">
+                     {{   }}}
+
+                        <a href="{{=it.result[i].Url}}">
+                            <div class="fl hpList2L">
+                                <img src="{{=it.result[i].Logo}}" alt=""/>
+                            </div>
+                            <div class="fl hpList2R">
+                                <div class="hp2Name">{{=it.result[i].Name}}</div>
+                                <div class="hp2Z"><span class="col_Orange">{{=it.result[i].VoteCount}}</span>个赞同<span class="col_Orange ml10">{{=it.result[i].AnswerCount}}</span>个回答</div>
+                            </div>
+                        </a>
+                    </li>
+                    {{  }}}
+                </ul>
+            </script>
+            <script id="whwdT" type="text/x-dot-template">
+              {{  for(var i = 0,len = 5;i < len; i++){}}
+                <li><span>{{=it.result[i].PostTime.split(' ')[1].substring(0,5)}}</span><a href="{{=it.result[i].Url}}">{{=it.result[i].Title}}</a></li>
+               {{ } }}
+            </script>
+        <div id="hpbFirst">
+
+        </div>
+        <div id="hpbSecond">
+        </div>
+        </div>
+        <div class="contextRB mt20">
+            <h2 class="tit2">外汇问达</h2>
+            <ul class="listAswers" id="whwd">
+
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="hzzj">
+    <h2 class="tit2">全部合作专家</h2>
+    <div id="hzzj">
+        <div>
+            <ul class="listZJ clearfix">
+                <li>
+                    <div class="listZJ-img"><a href="#"><img src="images/temp3.png" alt=""/></a></div>
+                    <div class="listZJ-t"><h3><a href="#">周军</a></h3><p>朝阳人，中共党员，吉林大学博士，教授，朝阳人，吉林大学博士，硕士生导师...</p></div>
+                </li>
+                <li>
+                    <div class="listZJ-img"><a href="#"><img src="images/temp3.png" alt=""/></a></div>
+                    <div class="listZJ-t"><h3><a href="#">周军</a></h3><p>朝阳人，中共党员，吉林大学博士，教授，朝阳人，吉林大学博士，硕士生导师...</p></div>
+                </li>
+                <li>
+                    <div class="listZJ-img"><a href="#"><img src="images/temp3.png" alt=""/></a></div>
+                    <div class="listZJ-t"><h3><a href="#">周军</a></h3><p>朝阳人，中共党员，吉林大学博士，教授，朝阳人，吉林大学博士，硕士生导师...</p></div>
+                </li>
+                <li>
+                    <div class="listZJ-img"><a href="#"><img src="images/temp3.png" alt=""/></a></div>
+                    <div class="listZJ-t"><h3><a href="#">周军</a></h3><p>朝阳人，中共党员，吉林大学博士，教授，朝阳人，吉林大学博士，硕士生导师...</p></div>
+                </li>
+            </ul>
+            <div class="lineX"></div>
+            <ul class="listZJ clearfix">
+                <li>
+                    <div class="listZJ-img"><a href="#"><img src="images/temp3.png" alt=""/></a></div>
+                    <div class="listZJ-t"><h3><a href="#">周军</a></h3><p>朝阳人，中共党员，吉林大学博士，教授，朝阳人，吉林大学博士，硕士生导师...</p></div>
+                </li>
+                <li>
+                    <div class="listZJ-img"><a href="#"><img src="images/temp3.png" alt=""/></a></div>
+                    <div class="listZJ-t"><h3><a href="#">周军</a></h3><p>朝阳人，中共党员，吉林大学博士，教授，朝阳人，吉林大学博士，硕士生导师...</p></div>
+                </li>
+                <li>
+                    <div class="listZJ-img"><a href="#"><img src="images/temp3.png" alt=""/></a></div>
+                    <div class="listZJ-t"><h3><a href="#">周军</a></h3><p>朝阳人，中共党员，吉林大学博士，教授，朝阳人，吉林大学博士，硕士生导师...</p></div>
+                </li>
+                <li>
+                    <div class="listZJ-img"><a href="#"><img src="images/temp3.png" alt=""/></a></div>
+                    <div class="listZJ-t"><h3><a href="#">周军</a></h3><p>朝阳人，中共党员，吉林大学博士，教授，朝阳人，吉林大学博士，硕士生导师...</p></div>
+                </li>
+            </ul>
+        </div>
+        <div style="display:none;">
+            <div class="lineX"></div>
+            <ul class="listZJ clearfix">
+                <li>
+                    <div class="listZJ-img"><a href="#"><img src="images/temp3.png" alt=""/></a></div>
+                    <div class="listZJ-t"><h3><a href="#">周军</a></h3><p>朝阳人，中共党员，吉林大学博士，教授，朝阳人，吉林大学博士，硕士生导师...</p></div>
+                </li>
+                <li>
+                    <div class="listZJ-img"><a href="#"><img src="images/temp3.png" alt=""/></a></div>
+                    <div class="listZJ-t"><h3><a href="#">周军</a></h3><p>朝阳人，中共党员，吉林大学博士，教授，朝阳人，吉林大学博士，硕士生导师...</p></div>
+                </li>
+                <li>
+                    <div class="listZJ-img"><a href="#"><img src="images/temp3.png" alt=""/></a></div>
+                    <div class="listZJ-t"><h3><a href="#">周军</a></h3><p>朝阳人，中共党员，吉林大学博士，教授，朝阳人，吉林大学博士，硕士生导师...</p></div>
+                </li>
+                <li>
+                    <div class="listZJ-img"><a href="#"><img src="images/temp3.png" alt=""/></a></div>
+                    <div class="listZJ-t"><h3><a href="#">周军</a></h3><p>朝阳人，中共党员，吉林大学博士，教授，朝阳人，吉林大学博士，硕士生导师...</p></div>
+                </li>
+            </ul>
+            <div class="lineX"></div>
+            <ul class="listZJ clearfix">
+                <li>
+                    <div class="listZJ-img"><a href="#"><img src="images/temp3.png" alt=""/></a></div>
+                    <div class="listZJ-t"><h3><a href="#">周军</a></h3><p>朝阳人，中共党员，吉林大学博士，教授，朝阳人，吉林大学博士，硕士生导师...</p></div>
+                </li>
+                <li>
+                    <div class="listZJ-img"><a href="#"><img src="images/temp3.png" alt=""/></a></div>
+                    <div class="listZJ-t"><h3><a href="#">周军</a></h3><p>朝阳人，中共党员，吉林大学博士，教授，朝阳人，吉林大学博士，硕士生导师...</p></div>
+                </li>
+                <li>
+                    <div class="listZJ-img"><a href="#"><img src="images/temp3.png" alt=""/></a></div>
+                    <div class="listZJ-t"><h3><a href="#">周军</a></h3><p>朝阳人，中共党员，吉林大学博士，教授，朝阳人，吉林大学博士，硕士生导师...</p></div>
+                </li>
+                <li>
+                    <div class="listZJ-img"><a href="#"><img src="images/temp3.png" alt=""/></a></div>
+                    <div class="listZJ-t"><h3><a href="#">周军</a></h3><p>朝阳人，中共党员，吉林大学博士，教授，朝阳人，吉林大学博士，硕士生导师...</p></div>
+                </li>
+            </ul>
+        </div>
+        <div style="display:none;">
+            <div class="lineX"></div>
+            <ul class="listZJ clearfix">
+                <li>
+                    <div class="listZJ-img"><a href="#"><img src="images/temp3.png" alt=""/></a></div>
+                    <div class="listZJ-t"><h3><a href="#">周军</a></h3><p>朝阳人，中共党员，吉林大学博士，教授，朝阳人，吉林大学博士，硕士生导师...</p></div>
+                </li>
+                <li>
+                    <div class="listZJ-img"><a href="#"><img src="images/temp3.png" alt=""/></a></div>
+                    <div class="listZJ-t"><h3><a href="#">周军</a></h3><p>朝阳人，中共党员，吉林大学博士，教授，朝阳人，吉林大学博士，硕士生导师...</p></div>
+                </li>
+                <li>
+                    <div class="listZJ-img"><a href="#"><img src="images/temp3.png" alt=""/></a></div>
+                    <div class="listZJ-t"><h3><a href="#">周军</a></h3><p>朝阳人，中共党员，吉林大学博士，教授，朝阳人，吉林大学博士，硕士生导师...</p></div>
+                </li>
+                <li>
+                    <div class="listZJ-img"><a href="#"><img src="images/temp3.png" alt=""/></a></div>
+                    <div class="listZJ-t"><h3><a href="#">周军</a></h3><p>朝阳人，中共党员，吉林大学博士，教授，朝阳人，吉林大学博士，硕士生导师...</p></div>
+                </li>
+            </ul>
+            <div class="lineX"></div>
+            <ul class="listZJ clearfix">
+                <li>
+                    <div class="listZJ-img"><a href="#"><img src="images/temp3.png" alt=""/></a></div>
+                    <div class="listZJ-t"><h3><a href="#">周军</a></h3><p>朝阳人，中共党员，吉林大学博士，教授，朝阳人，吉林大学博士，硕士生导师...</p></div>
+                </li>
+                <li>
+                    <div class="listZJ-img"><a href="#"><img src="images/temp3.png" alt=""/></a></div>
+                    <div class="listZJ-t"><h3><a href="#">周军</a></h3><p>朝阳人，中共党员，吉林大学博士，教授，朝阳人，吉林大学博士，硕士生导师...</p></div>
+                </li>
+                <li>
+                    <div class="listZJ-img"><a href="#"><img src="images/temp3.png" alt=""/></a></div>
+                    <div class="listZJ-t"><h3><a href="#">周军</a></h3><p>朝阳人，中共党员，吉林大学博士，教授，朝阳人，吉林大学博士，硕士生导师...</p></div>
+                </li>
+                <li>
+                    <div class="listZJ-img"><a href="#"><img src="images/temp3.png" alt=""/></a></div>
+                    <div class="listZJ-t"><h3><a href="#">周军</a></h3><p>朝阳人，中共党员，吉林大学博士，教授，朝阳人，吉林大学博士，硕士生导师...</p></div>
+                </li>
+            </ul>
+        </div>
+        <div style="display:none;">
+            <div class="lineX"></div>
+            <ul class="listZJ clearfix">
+                <li>
+                    <div class="listZJ-img"><a href="#"><img src="images/temp3.png" alt=""/></a></div>
+                    <div class="listZJ-t"><h3><a href="#">周军</a></h3><p>朝阳人，中共党员，吉林大学博士，教授，朝阳人，吉林大学博士，硕士生导师...</p></div>
+                </li>
+                <li>
+                    <div class="listZJ-img"><a href="#"><img src="images/temp3.png" alt=""/></a></div>
+                    <div class="listZJ-t"><h3><a href="#">周军</a></h3><p>朝阳人，中共党员，吉林大学博士，教授，朝阳人，吉林大学博士，硕士生导师...</p></div>
+                </li>
+                <li>
+                    <div class="listZJ-img"><a href="#"><img src="images/temp3.png" alt=""/></a></div>
+                    <div class="listZJ-t"><h3><a href="#">周军</a></h3><p>朝阳人，中共党员，吉林大学博士，教授，朝阳人，吉林大学博士，硕士生导师...</p></div>
+                </li>
+                <li>
+                    <div class="listZJ-img"><a href="#"><img src="images/temp3.png" alt=""/></a></div>
+                    <div class="listZJ-t"><h3><a href="#">周军</a></h3><p>朝阳人，中共党员，吉林大学博士，教授，朝阳人，吉林大学博士，硕士生导师...</p></div>
+                </li>
+            </ul>
+            <div class="lineX"></div>
+            <ul class="listZJ clearfix">
+                <li>
+                    <div class="listZJ-img"><a href="#"><img src="images/temp3.png" alt=""/></a></div>
+                    <div class="listZJ-t"><h3><a href="#">周军</a></h3><p>朝阳人，中共党员，吉林大学博士，教授，朝阳人，吉林大学博士，硕士生导师...</p></div>
+                </li>
+                <li>
+                    <div class="listZJ-img"><a href="#"><img src="images/temp3.png" alt=""/></a></div>
+                    <div class="listZJ-t"><h3><a href="#">周军</a></h3><p>朝阳人，中共党员，吉林大学博士，教授，朝阳人，吉林大学博士，硕士生导师...</p></div>
+                </li>
+                <li>
+                    <div class="listZJ-img"><a href="#"><img src="images/temp3.png" alt=""/></a></div>
+                    <div class="listZJ-t"><h3><a href="#">周军</a></h3><p>朝阳人，中共党员，吉林大学博士，教授，朝阳人，吉林大学博士，硕士生导师...</p></div>
+                </li>
+                <li>
+                    <div class="listZJ-img"><a href="#"><img src="images/temp3.png" alt=""/></a></div>
+                    <div class="listZJ-t"><h3><a href="#">周军</a></h3><p>朝阳人，中共党员，吉林大学博士，教授，朝阳人，吉林大学博士，硕士生导师...</p></div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="moreZJ">
+        <a href="#" id="viewMore">查看更多专家</a>
+    </div>
+
+</div>
+<div id="zt_foot2010">
+    <link rel="stylesheet" type="text/css" href="http://img.hexun.com/2010/zt/ztfoot2010.css" />
+    <div class="ztfl">CopyRight @ <b>和讯网 和讯信息科技有限公司</b> All Rights Reserverd 版权所有 复制必究</div>
+    <div class="ztfr"><a href="http://www.hexun.com" target="_blank">返回和讯首页</a>&nbsp;</div>
+</div>
+<!--隐藏登录快-->
+<div style="display:none;" id="hexunMember_liveDisplay"></div>
+
+<script src="http://login.tool.hexun.com/OtherInterFace/login_2010_Style02.aspx" type="text/javascript" charset="gb2312"></script>
+<script src="http://img.hexun.com/js/spe_inc_2010.js"></script>
+<script src="http://news.hexun.com/js/count.js?date=201212282150"></script>
+<script src="http://utrack.hexun.com/track/track_hx.js"></script>
+
+
+<!--分享start-->
+<script type="text/javascript">
+    (function(){
+        var reg = /^[http:\/\/\w|\w\.*\w|\w]+\.hexun\.com(\/|(\?[^\/]+)|\/index.html|\/index\-[\w]+.html)*$/;
+        if(!reg.test(window.location.href)) {
+            document.write('\x3Cscript type="text/javascript" src="http://img.hexun.com/base/version/hx_base.min1.1.js">\x3C/script>'+'\x3Cscript type="text/javascript" src="http://img.hexun.com/share/hxShare2011_bd.js">\x3C/script><link href="http://img.hexun.com/share/hxShare2011_bd.css" type="text/css" rel="stylesheet" />');
+            if(window.attachEvent) window.attachEvent('onload',function() {hxShare2011('');});
+            if(window.addEventListener) window.addEventListener('load',function(){hxShare2011('');},false);
+        }
+    })();
+</script>
+<!--分享over-->
+<script type="text/javascript" src="http://img.hexun.com/app/js/TB.main.js?20120222"></script>
+<script type="text/javascript" src="js/doT.js"></script>
+<script type="text/javascript" src="js/myscript.js"></script>
+<script type="text/javascript">
+    /*http://testwenda.tool.hexun.com/Salon/GetQuestions/*/
+    var oAsk = new Ask('http://wenda.tool.hexun.com/Salon/GetQuestions/',{pageIndex:1,pageSize:7,labelIds:ZJtag[0] +'|' +  ZJtag[1] + '|' + ZJtag[2] + '|' + ZJtag[3] ,hasanswer:'1'});
+</script>
+<script src="js/popup.js" type="text/javascript"></script>
+</body>
+</html>
